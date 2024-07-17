@@ -1,0 +1,30 @@
+server:
+  port: 8650
+spring:
+  application:
+    name: WEITEST
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/weitest?allowMultiQueries=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: qwe123456qwe
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    data:
+      host: '127.0.0.1'
+      port: 6379
+      lettuce:
+        pool:
+          # 连接池最大连接数（使用负值表示没有限制） 默认 8
+          max-active: 200
+          # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+          max-wait: -1
+          # 连接池中的最大空闲连接 默认 8
+          max-idle: -1
+          # 连接池中的最小空闲连接 默认 0
+          min-idle: 0
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
